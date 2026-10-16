@@ -35,9 +35,9 @@
   .tom.t1 { --akc:#f3efe2; } .tom.t2 { --akc:#9fc8e8; } .tom.t3 { --akc:#d7b96a; }
   .tom .nr { font-size:.78rem; letter-spacing:.22em; color:var(--cien); margin-bottom:.3rem; }
   .sygnet { display:block; margin:0 auto 1.1rem; }
-  .puls { animation: puls 6s ease-in-out infinite; transform-origin:center; }
-  .puls2 { animation: puls 6s ease-in-out 3s infinite; transform-origin:center; }
-  @keyframes puls { 0%,100% { opacity:.45; } 50% { opacity:1; } }
+  .puls { animation: puls 4s ease-in-out infinite; transform-origin:center; transform-box:fill-box; }
+  .puls2 { animation: puls 4s ease-in-out 2s infinite; transform-origin:center; transform-box:fill-box; }
+  @keyframes puls { 0%,100% { opacity:.25; transform:scale(.92); } 50% { opacity:1; transform:scale(1.08); } }
   @media (prefers-reduced-motion: reduce){ .puls,.puls2{ animation:none; opacity:.8; } }
   .tom h3 { margin:0 0 .7rem; font-size:1.18rem; color:var(--akc); letter-spacing:.03em; }
   .tom .hak { font-style:italic; color:var(--mgla); margin:0 0 .9rem; }
@@ -100,7 +100,7 @@
     <p>Trzy tomy. Jedna historia o trzech gestach: najpierw odkrywamy, że ktoś na nas <strong>patrzy</strong>.
     Potem postanawiamy <strong>odpowiedzieć</strong> — nie słowem, lecz dwudziestoma latami pracy i statkiem,
     który nie powinien istnieć. Na końcu rozumiemy, że jesteśmy ogniwem — i <strong>przekazujemy dalej</strong>.</p>
-    <p>To hard SF, które ma czelność być czułe: fizyka i kołysanka na tej samej stronie, i obie prawdziwe.
+    <p>To hard SF z żelazną zasadą: fizyka ma się zgadzać, a wielkość mierzy się decyzjami, nie eksplozjami.
     A pod fabułą — kompletna, autorska teoria wszechświata, którą znajdziesz niżej. Za darmo.
     Bo pytania nie są na sprzedaż.</p>
   </div>
