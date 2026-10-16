@@ -3,35 +3,286 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Maciej Łuczewski — strona autorska</title>
-<meta name="description" content="Maciej Łuczewski — autor trylogii hard SF L3, Kosmicznej Teorii Dziedziczenia Świadomości i Wszechświatów (KTDŚW/CTCUI) oraz koncepcji napędu QFHPS.">
+<title>Maciej Łuczewski — trylogia L3 · teoria KTDŚW · napęd QFHPS</title>
+<meta name="description" content="Oficjalna strona autorska Macieja Łuczewskiego: trylogia hard SF „L3”, Kosmiczna Teoria Dziedziczenia Świadomości i Wszechświatów (KTDŚW/CTCUI) i koncepcja napędu QFHPS — teoria i napęd do pobrania za darmo (DOI, Zenodo).">
 <style>
-  :root { color-scheme: dark; }
-  body { margin:0; font-family: Georgia, 'Times New Roman', serif; background:#0b1526; color:#e8e4d8;
-         display:flex; min-height:100vh; align-items:center; justify-content:center; }
-  .card { max-width: 40rem; padding: 3rem 2rem; text-align:center; }
-  h1 { font-size: 2rem; letter-spacing:.06em; margin:0 0 .4rem; color:#f3efe2; }
-  .sub { font-style: italic; color:#b8c4d8; margin:0 0 2rem; }
-  .motto { color:#d7b96a; margin: 0 0 2.4rem; font-size:1.05rem; }
-  .links { display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; }
-  .links a { color:#e8e4d8; text-decoration:none; border:1px solid #3a4a63; border-radius:2rem;
-             padding:.5rem 1.1rem; font-size:.95rem; transition: border-color .2s, color .2s; }
-  .links a:hover { border-color:#d7b96a; color:#d7b96a; }
-  .note { margin-top:2.6rem; font-size:.85rem; color:#7f8ba0; }
+  :root { color-scheme: dark;
+    --noc:#0b1526; --noc2:#0e1b30; --atrament:#13233c;
+    --kosc:#e8e4d8; --jasna:#f3efe2; --mgla:#b8c4d8; --cien:#7f8ba0;
+    --burs:#d7b96a; --lod:#9fc8e8; --linia:#2c3c58; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: Georgia,'Times New Roman',serif; background:var(--noc); color:var(--kosc); line-height:1.65; }
+  a { color:var(--lod); }
+  .wrap { max-width: 62rem; margin:0 auto; padding:0 1.4rem; }
+
+  header.hero { text-align:center; padding:5.5rem 1rem 3.5rem; }
+  .hero h1 { font-size:2.4rem; letter-spacing:.07em; margin:0 0 .4rem; color:var(--jasna); }
+  .hero .sub { font-style:italic; color:var(--mgla); margin:0 0 1.6rem; }
+  .hero .motto { color:var(--burs); font-size:1.08rem; max-width:34rem; margin:0 auto 2.2rem; }
+  nav.gorne { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; }
+  nav.gorne a { color:var(--kosc); text-decoration:none; border:1px solid var(--linia); border-radius:2rem;
+    padding:.45rem 1.05rem; font-size:.92rem; transition:border-color .2s,color .2s; }
+  nav.gorne a:hover { border-color:var(--burs); color:var(--burs); }
+
+  section { padding:3.4rem 0 1rem; }
+  .sek-tytul { text-align:center; font-size:1.7rem; color:var(--jasna); letter-spacing:.04em; margin:0 0 .4rem; }
+  .sek-pod { text-align:center; font-style:italic; color:var(--mgla); margin:0 0 2rem; }
+  .intro { max-width:42rem; margin:0 auto 2.4rem; text-align:center; color:var(--kosc); }
+
+  .tomy { display:grid; grid-template-columns:repeat(auto-fit,minmax(17rem,1fr)); gap:1.3rem; }
+  .tom { background:var(--noc2); border:1px solid var(--linia); border-top:3px solid var(--akc,var(--burs));
+    border-radius:.6rem; padding:1.6rem 1.5rem 1.4rem; display:flex; flex-direction:column; }
+  .tom.t1 { --akc:#f3efe2; } .tom.t2 { --akc:#9fc8e8; } .tom.t3 { --akc:#d7b96a; }
+  .tom .nr { font-size:.78rem; letter-spacing:.22em; color:var(--cien); margin-bottom:.3rem; }
+  .sygnet { display:block; margin:0 auto 1.1rem; }
+  .puls { animation: puls 6s ease-in-out infinite; transform-origin:center; }
+  .puls2 { animation: puls 6s ease-in-out 3s infinite; transform-origin:center; }
+  @keyframes puls { 0%,100% { opacity:.45; } 50% { opacity:1; } }
+  @media (prefers-reduced-motion: reduce){ .puls,.puls2{ animation:none; opacity:.8; } }
+  .tom h3 { margin:0 0 .7rem; font-size:1.18rem; color:var(--akc); letter-spacing:.03em; }
+  .tom .hak { font-style:italic; color:var(--mgla); margin:0 0 .9rem; }
+  .tom p { margin:0 0 .85rem; font-size:.96rem; }
+  .tom .cytat { border-left:2px solid var(--akc); padding-left:.9rem; font-style:italic; color:var(--mgla);
+    font-size:.9rem; margin:.4rem 0 1.1rem; }
+  .tom .kup { margin-top:auto; text-align:center; }
+  .btn { display:inline-block; text-decoration:none; color:var(--noc); background:var(--burs);
+    border-radius:2rem; padding:.55rem 1.35rem; font-size:.95rem; font-weight:bold; }
+  .btn:hover { background:var(--jasna); color:var(--noc); }
+  .btn.obrys { background:transparent; color:var(--kosc); border:1px solid var(--linia); font-weight:normal; }
+  .btn.obrys:hover { border-color:var(--burs); color:var(--burs); background:transparent; }
+
+  .dwie { display:grid; grid-template-columns:1fr; gap:1.3rem; }
+  .karta { background:var(--noc2); border:1px solid var(--linia); border-radius:.6rem; padding:1.8rem 1.7rem; }
+  .karta h3 { margin:0 0 .3rem; color:var(--jasna); font-size:1.25rem; }
+  .karta .pod { font-style:italic; color:var(--mgla); margin:0 0 1rem; }
+  .karta p { font-size:.97rem; }
+  .przyciski { display:flex; flex-wrap:wrap; gap:.7rem; margin:1.2rem 0 .7rem; }
+  .siew { font-style:italic; color:var(--cien); font-size:.88rem; }
+
+  table.pobrania { width:100%; border-collapse:collapse; font-size:.92rem; margin-top:1.4rem; }
+  .pobrania th, .pobrania td { text-align:left; padding:.6rem .7rem; border-bottom:1px solid var(--linia); vertical-align:top; }
+  .pobrania th { color:var(--burs); font-weight:normal; letter-spacing:.06em; font-size:.82rem; }
+  .pobrania a { white-space:nowrap; }
+  .cc { color:var(--cien); font-size:.85rem; margin-top:1rem; }
+
+  .autor { display:flex; flex-direction:column; gap:1rem; max-width:44rem; margin:0 auto; text-align:center; }
+  .autor p { margin:0; }
+  .idlinki { display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; margin-top:.6rem; }
+
+  footer { margin-top:4rem; border-top:1px solid var(--linia); padding:2rem 1rem 2.6rem; text-align:center;
+    color:var(--cien); font-size:.85rem; }
+  footer .kwarc { font-style:italic; color:var(--mgla); margin-bottom:.8rem; }
+  @media (min-width:52rem){ .dwie { grid-template-columns:1fr 1fr; } }
 </style>
 </head>
 <body>
-<main class="card">
+
+<header class="hero">
   <h1>MACIEJ ŁUCZEWSKI</h1>
-  <p class="sub">autor trylogii „L3” · Kosmiczna Teoria Dziedziczenia Świadomości i Wszechświatów</p>
+  <p class="sub">autor trylogii „L3” · twórca Kosmicznej Teorii Dziedziczenia Świadomości i Wszechświatów</p>
   <p class="motto">„Przeczuwamy, że jest to możliwe w ramach nauki, ale jeszcze nie wiemy dokładnie jak.”</p>
-  <nav class="links">
-    <a href="https://www.amazon.com/dp/B0HM54HSRF">Trylogia L3 na Amazon</a>
-    <a href="https://doi.org/10.5281/zenodo.23220960">Teoria (KTDŚW) — PDF za darmo</a>
-    <a href="https://doi.org/10.5281/zenodo.23302260">Napęd QFHPS — PDF za darmo</a>
-    <a href="https://orcid.org/0009-0001-5389-6731">ORCID</a>
+  <nav class="gorne">
+    <a href="#trylogia">Trylogia L3</a>
+    <a href="#teoria">Teoria KTDŚW</a>
+    <a href="#naped">Napęd QFHPS</a>
+    <a href="#pobrania">Pobierz za darmo</a>
+    <a href="#autor">O autorze</a>
   </nav>
-  <p class="note">Pełna strona w budowie · Strona powstaje wspólnie z Claude (Anthropic)</p>
+</header>
+
+<main class="wrap">
+
+<!-- ====================== TRYLOGIA ====================== -->
+<section id="trylogia">
+  <h2 class="sek-tytul">TRYLOGIA L3</h2>
+  <p class="sek-pod">historia, która zaczyna się od spojrzenia, a kończy przekazaniem</p>
+  <div class="intro">
+    <p>Trzy tomy. Jedna historia o trzech gestach: najpierw odkrywamy, że ktoś na nas <strong>patrzy</strong>.
+    Potem postanawiamy <strong>odpowiedzieć</strong> — nie słowem, lecz dwudziestoma latami pracy i statkiem,
+    który nie powinien istnieć. Na końcu rozumiemy, że jesteśmy ogniwem — i <strong>przekazujemy dalej</strong>.</p>
+    <p>To hard SF, które ma czelność być czułe: fizyka i kołysanka na tej samej stronie, i obie prawdziwe.
+    A pod fabułą — kompletna, autorska teoria wszechświata, którą znajdziesz niżej. Za darmo.
+    Bo pytania nie są na sprzedaż.</p>
+  </div>
+
+  <div class="tomy">
+    <article class="tom t1">
+      <div class="nr">TOM I</div>
+      <svg class="sygnet" width="120" height="84" viewBox="0 0 120 84" aria-hidden="true">
+        <ellipse cx="60" cy="42" rx="52" ry="18" fill="none" stroke="#f3efe2" stroke-opacity=".35" stroke-width="1"/>
+        <ellipse cx="60" cy="42" rx="38" ry="12" fill="none" stroke="#f3efe2" stroke-opacity=".25" stroke-width="1"/>
+        <circle cx="60" cy="42" r="3.2" fill="#f3efe2"/>
+        <circle class="puls" cx="104" cy="31" r="4.5" fill="#0b1526" stroke="#f3efe2" stroke-width="1.2"/>
+      </svg>
+      <h3>L3: TROJAŃSKI OBSERWATOR</h3>
+      <p class="hak">Jak długo nie byliśmy sami, zanim to zauważyliśmy?</p>
+      <p>Zaczyna się niewinnie: astrofizyczka zauważa, że orbity kilku obiektów w Układzie Słonecznym są o włos
+      zbyt idealne. Włos to za mało na alarm. Wystarczy na bezsenność.</p>
+      <p>To nie jest książka o inwazji. Nikt tu nie strzela do spodków. Jest gorzej: jest rosnąca, chłodna pewność,
+      że coś patrzy na nas od bardzo dawna. A potem przychodzą trzy grudniowe noce, po których świat budzi się
+      mniejszy o sześć i pół miliarda ludzi — i musi zdecydować, kim będzie dalej.</p>
+      <p>Thriller odkrycia pisany rytmem danych, nocnych telefonów i decyzji, których nie da się cofnąć.
+      Po ostatniej stronie spojrzysz w nocne niebo inaczej. Nie ze strachem. Z czujnością.</p>
+      <p class="cytat">„Po jednej stronie granicy był świat, w którym służył przez dwadzieścia osiem lat.
+      Po drugiej stronie — wszystko inne.”</p>
+      <p class="kup"><a class="btn" href="https://www.amazon.pl/dp/B0GXVX9NNF">KUP NA AMAZON →</a></p>
+    </article>
+
+    <article class="tom t2">
+      <div class="nr">TOM II</div>
+      <svg class="sygnet" width="120" height="84" viewBox="0 0 120 84" aria-hidden="true">
+        <defs><radialGradient id="lod" cx="50%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="#cfe6f7"/><stop offset="55%" stop-color="#9fc8e8"/>
+          <stop offset="100%" stop-color="#9fc8e8" stop-opacity="0"/></radialGradient></defs>
+        <line x1="8" y1="58" x2="112" y2="58" stroke="#9fc8e8" stroke-opacity=".45" stroke-width="1"/>
+        <circle class="puls" cx="60" cy="40" r="20" fill="url(#lod)"/>
+        <circle cx="60" cy="40" r="12" fill="none" stroke="#cfe6f7" stroke-opacity=".8" stroke-width="1.1"/>
+      </svg>
+      <h3>L3: HORIZON</h3>
+      <p class="hak">Co można zbudować z niczego, jeśli się pamięta, po co?</p>
+      <p>Wiesz, co jest najtrudniejsze w końcu świata? To, że następnego dnia jest kolejny dzień.</p>
+      <p>Kino umie sfilmować katastrofę. Nie umie sfilmować dwudziestu lat, które przychodzą potem — a ta książka
+      jest właśnie o nich. O ludziach, którzy w świecie bez sieci i bez złudzeń postanawiają nie odbudowywać
+      starego świata, tylko zbudować <strong>odpowiedź</strong>. Bo tam, w górze, ktoś na nią czeka.</p>
+      <p>Pięć Zapłonów, pięć aktów uporu: elektrownia nad Bałtykiem, która budzi się pierwsza. „Zrobione,
+      nie znalezione”. Zimny ogień. I statek, budowany przez pokolenie, które wie, że nim nie poleci.</p>
+      <p>Jeśli kochasz „Marsjanina” za wiarę w inżynierię i Liu Cixina za oddech stuleci — to jest twoja półka.
+      Nadzieja nie jest uczuciem. Nadzieja jest rzemiosłem.</p>
+      <p class="cytat">„Prąd idzie z prawdziwej sieci — z elektrociepłowni, którą złożono z powrotem do życia,
+      blok po bloku.”</p>
+      <p class="kup"><a class="btn" href="https://www.amazon.pl/dp/B0HM3GWPQL">KUP NA AMAZON →</a></p>
+    </article>
+
+    <article class="tom t3">
+      <div class="nr">TOM III</div>
+      <svg class="sygnet" width="120" height="84" viewBox="0 0 120 84" aria-hidden="true">
+        <defs><radialGradient id="burs" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#f2dca3"/><stop offset="55%" stop-color="#d7b96a"/>
+          <stop offset="100%" stop-color="#d7b96a" stop-opacity="0"/></radialGradient></defs>
+        <line x1="60" y1="76" x2="60" y2="36" stroke="#d7b96a" stroke-opacity=".7" stroke-width="1.4"/>
+        <line x1="46" y1="76" x2="74" y2="76" stroke="#d7b96a" stroke-opacity=".45" stroke-width="1"/>
+        <circle class="puls2" cx="60" cy="26" r="15" fill="url(#burs)"/>
+        <circle cx="60" cy="26" r="6" fill="#f2dca3"/>
+      </svg>
+      <h3>L3: OGRODNICY</h3>
+      <p class="hak">Co przekazujemy dalej, kiedy przekazujemy wszystko?</p>
+      <p>Wiesz, jak kończą się trylogie o kontakcie? Wielką bitwą albo wielkim objawieniem. Ta kończy się
+      rozmową — i to jest najbardziej zapierające dech zakończenie, jakie dostaniesz od lat.</p>
+      <p>Statek zbudowany rękami ocalałych niesie garstkę ludzi w stronę czegoś, co czekało dłużej, niż istnieje
+      nasz gatunek. Są dzieci urodzone między gwiazdami, dla których Ziemia jest bajką na dobranoc. Są nitki —
+      sny przędące się nocą między dziećmi statku a ich rówieśnikami w domu. I są Ogrodnicy. Nie powiemy ci,
+      kim są.</p>
+      <p>Na końcu czeka rzecz w polskiej fantastyce bezprecedensowa: pełny traktat naukowy, oprawiony jak
+      relikwia. Możesz go pominąć. Nie pominiesz.</p>
+      <p>Nie jesteście sami. Tym razem to my to mówimy.</p>
+      <p class="cytat">„Nosiliśmy wodę. Piliśmy. Teraz niesiemy dalej — studnia nie ma dna, ma drugi brzeg.”</p>
+      <p class="kup"><a class="btn" href="https://www.amazon.pl/dp/B0HM56M53Y">KUP NA AMAZON →</a></p>
+    </article>
+  </div>
+</section>
+
+<!-- ====================== TEORIA I NAPĘD ====================== -->
+<section id="teoria">
+  <div class="dwie">
+    <article class="karta">
+      <h3>KTDŚW — teoria, wokół której zbudowana jest trylogia</h3>
+      <p class="pod">Kosmiczna Teoria Dziedziczenia Świadomości i Wszechświatów · do pobrania za darmo, w całości</p>
+      <p>A co, jeśli czarne dziury nie są grobami, tylko macicami? Jeśli nasz wszechświat jest jednym z liści
+      na rosnącym drzewie kosmosów — a przyspieszająca ekspansja, którą astronomowie łatają „ciemną energią”,
+      to po prostu napór rodzących się dzieci na rodzica?</p>
+      <p>KTDŚW to autorska hipoteza kosmologiczna, która jedną ramą obejmuje kilka największych zagadek
+      współczesnej fizyki: kryzys Hubble’a, naturę ciemnej energii, paradoks informacyjny czarnych dziur,
+      dostrojenie stałych fundamentalnych — i twardy problem świadomości. Jej sedno: wszechświaty tworzą
+      ewoluującą populację; świadomość jest informacją kwantową, która nie ginie ze śmiercią ciała, lecz
+      zostaje odziedziczona. Teoria stawia siedem grup sprawdzalnych predykcji — i uczciwie mówi,
+      co by ją obaliło.</p>
+      <p>To nie jest objawienie ani dogmat. To hipoteza postawiona z uczciwością i powagą. Jeśli czytałeś
+      „Ogrodników” — to jest ten traktat. Jeśli nie czytałeś — zacznij od dowolnej strony. Wciągnie cię
+      jak dobra powieść, tylko że o Tobie.</p>
+      <div class="przyciski">
+        <a class="btn" href="https://doi.org/10.5281/zenodo.23220960">POBIERZ SYNTEZĘ (PDF) →</a>
+        <a class="btn obrys" href="https://doi.org/10.5281/zenodo.23301346">Manifest — wersja krótka (2025)</a>
+      </div>
+      <p class="siew">Teoria nie jest na sprzedaż. Jest do siania. Jeśli po lekturze zechcesz zobaczyć,
+      jak żyje w opowieści — trylogia L3 czeka wyżej.</p>
+    </article>
+
+    <article class="karta" id="naped">
+      <h3>Jak doleciałby tam statek zbudowany przez ocalałych?</h3>
+      <p class="pod">QFHPS — koncepcja hybrydowego napędu międzygwiezdnego · opracowanie techniczne do pobrania za darmo</p>
+      <p>Statek z „Horizona” nie ma silnika z kapelusza. Ma koncepcję złożoną z elementów, które fizyka zna —
+      poskładanych w całość, której jeszcze nie umie zbudować: zapłon plazmowy, czerpak zbierający paliwo
+      z drogi zamiast wieźć je ze sobą, katalityczny gorący cykl CNO (dlatego przed startem trzeba było kopać
+      na Kallisto), hamulec magnetyczny wytracający prędkość o ośrodek międzygwiazdowy — bez grama paliwa —
+      i płytki Casimira jako jedyna ujemna energia, jaką kiedykolwiek zmierzono w laboratorium.</p>
+      <p>Opracowanie liczy się z fizyką uczciwie: znajdziesz tu rachunki, które bolą (ile naprawdę trwa
+      rozpędzanie przy ułamku g; co robi miligram pyłu przy ośmiu procentach prędkości światła), i status
+      każdej tezy — od faktu, przez ekstrapolację, po jawnie oznaczoną spekulację.</p>
+      <p>Dla czytelnika hard SF: deser. Dla inżyniera i studenta: zaproszenie do policzenia lepiej.
+      Dla kogoś, kto kiedyś taki napęd zbuduje: ziarno.</p>
+      <div class="przyciski">
+        <a class="btn" href="https://doi.org/10.5281/zenodo.23302260">POBIERZ OPRACOWANIE (PDF) →</a>
+      </div>
+      <p class="siew">Zrobione, nie znalezione. Jeśli chcesz zobaczyć ten napęd w ruchu — „HORIZON”
+      i „OGRODNICY” czekają wyżej.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ====================== POBRANIA ====================== -->
+<section id="pobrania">
+  <h2 class="sek-tytul">POBIERZ ZA DARMO</h2>
+  <p class="sek-pod">wszystkie dokumenty opublikowane na Zenodo — z trwałymi identyfikatorami DOI, po polsku i po angielsku</p>
+  <table class="pobrania">
+    <tr><th>Dokument</th><th>Polski</th><th>English</th></tr>
+    <tr>
+      <td><strong>Synteza naukowa KTDŚW / CTCUI, v6.0</strong><br><span class="cc">pełny traktat: 34 rozdziały, predykcje, program badawczy</span></td>
+      <td><a href="https://doi.org/10.5281/zenodo.23220960">DOI: 10.5281/zenodo.23220960</a></td>
+      <td><a href="https://doi.org/10.5281/zenodo.23244167">DOI: 10.5281/zenodo.23244167</a></td>
+    </tr>
+    <tr>
+      <td><strong>Manifest nowej kosmologii (17 maja 2025)</strong><br><span class="cc">dokument założycielski teorii — wersja krótka, przystępna</span></td>
+      <td><a href="https://doi.org/10.5281/zenodo.23301346">DOI: 10.5281/zenodo.23301346</a></td>
+      <td><a href="https://doi.org/10.5281/zenodo.23301661">DOI: 10.5281/zenodo.23301661</a></td>
+    </tr>
+    <tr>
+      <td><strong>Koncepcja napędu QFHPS, v5.0</strong><br><span class="cc">opracowanie techniczne: fizyka, statek referencyjny, program eksperymentów</span></td>
+      <td><a href="https://doi.org/10.5281/zenodo.23302260">DOI: 10.5281/zenodo.23302260</a></td>
+      <td><a href="https://doi.org/10.5281/zenodo.23302505">DOI: 10.5281/zenodo.23302505</a></td>
+    </tr>
+  </table>
+  <p class="cc">Wszystkie dokumenty na licencji <strong>CC BY-NC-ND 4.0</strong>: wolno je kopiować i rozpowszechniać
+  w dowolnym medium z podaniem autora i źródła; nie wolno używać komercyjnie ani rozpowszechniać wersji zmienionych.
+  Pobranie bez rejestracji i bez podawania adresu — ziarno ma lecieć z wiatrem.</p>
+</section>
+
+<!-- ====================== O AUTORZE ====================== -->
+<section id="autor">
+  <h2 class="sek-tytul">O AUTORZE</h2>
+  <div class="autor">
+    <p>Maciej Łuczewski — pisarz i niezależny badacz, którego fascynuje punkt przecięcia nauki, historii
+    i filozofii. Autor trylogii hard science fiction „L3” („Trojański Obserwator”, „HORIZON”, „OGRODNICY”) —
+    opowieści o ludzkości, która odkrywa, że jest obserwowana, buduje odpowiedź i uczy się przekazywać dalej.
+    Twórca Kosmicznej Teorii Dziedziczenia Świadomości i Wszechświatów (KTDŚW), eksplorującej ideę, że czarne
+    dziury mogą być bramami do nowych wszechświatów, a świadomość — fundamentalną częścią kosmosu.</p>
+    <p>W swoich książkach łączy naukową precyzję z poetycką wyobraźnią, tworząc historie, które jednocześnie
+    bawią, uczą i skłaniają do refleksji. Pisze po polsku, mieszka w Gdyni — mieście, które w jego powieściach
+    buduje statek do gwiazd.</p>
+    <div class="idlinki">
+      <a class="btn obrys" href="https://orcid.org/0009-0001-5389-6731">ORCID</a>
+      <a class="btn obrys" href="https://www.amazon.com/dp/B0HM54HSRF">Amazon — seria L3</a>
+      <a class="btn obrys" href="https://x.com/MUczewski77953">X</a>
+      <a class="btn obrys" href="mailto:maciejweb@gmail.com">Kontakt</a>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<footer>
+  <p class="kwarc">„Pytanie też jest informacją.”</p>
+  <p>© 2025–2026 Maciej Łuczewski · Strona powstaje wspólnie z Claude (Anthropic) · English version — coming soon</p>
+</footer>
+
 </body>
 </html>
